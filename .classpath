@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/DVUtil.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/jcl-over-slf4j-1.5.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/org-netbeans-modules-java-j2seproject-copylibstask.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/slf4j-api-1.5.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/slf4j-jdk14-1.5.11.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="G:/2015-03-21-Small-Android-Helper-US/DocuVantage-03-21/libs/DVStoreApi2.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

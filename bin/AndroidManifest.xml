@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.docuvantage.andhelper.main"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="11" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />	
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+	
+    <application 
+        android:icon="@drawable/desktopautomator" 
+        android:label="@string/app_name" >
+        <provider
+		    android:name="com.ianhanniballake.localstorage.LocalStorageProvider"
+		    android:authorities="com.ianhanniballake.localstorage.documents"
+		    android:enabled="@bool/use_provider"
+		    android:exported="true"
+		    android:grantUriPermissions="true"
+		    android:permission="android.permission.MANAGE_DOCUMENTS" >
+		        <intent-filter>
+		            <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+		        </intent-filter>
+		</provider>
+		<activity
+		    android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+		    android:icon="@drawable/ic_chooser"
+		    android:enabled="@bool/use_activity"
+		    android:exported="true"
+		    android:configChanges="orientation|keyboardHidden|screenSize"
+		    android:label="@string/choose_file" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.GET_CONTENT" />
+		
+		        <category android:name="android.intent.category.DEFAULT" />
+		        <category android:name="android.intent.category.OPENABLE" />
+		
+		        <data android:mimeType="*/*" />
+		    </intent-filter>
+		</activity>
+		
+        <activity 
+            android:name="com.docuvantage.andhelper.main.DocuVantageLogin" 
+         	android:theme="@android:style/Theme.Holo.Light" 
+         	android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name">
+		    
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+			   <action android:name="android.intent.action.SEND" />
+			   <category android:name="android.intent.category.DEFAULT" />
+			   <data android:mimeType="*/*" />
+			</intent-filter>
+			
+			<intent-filter >
+	            <action android:name="android.intent.action.SEND_MULTIPLE"/>
+	            <category android:name="android.intent.category.DEFAULT"/>
+	            <data android:mimeType="image/*" />
+	            <data android:mimeType="*/*" />
+	        </intent-filter>
+	        
+	        <intent-filter android:label="@string/uploadtodocuvantage">
+	            <action android:name="android.intent.action.VIEW" />
+	            <category android:name="android.intent.category.DEFAULT" />
+	            <data android:scheme="content" />
+	            <data android:mimeType="application/octet-stream"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                <data android:mimeType="application/msword"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                <data android:mimeType="application/vnd.ms-excel"/>
+            </intent-filter>
+            
+	        <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                <data android:mimeType="application/msword"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                <data android:mimeType="application/vnd.ms-excel"/>
+                <data android:scheme="http" android:host="*" android:pathPattern=".*\\.pdf" />
+                <data android:scheme="https" android:host="*" android:pathPattern=".*\\.pdf" />
+                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.pdf" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\\.pdf" />
+                <data android:scheme="http" android:host="*" android:pathPattern=".*\\.ppt" />
+				<data android:scheme="https" android:host="*" android:pathPattern=".*\\.ppt" />
+				<data android:scheme="content" android:host="*" android:pathPattern=".*\\.ppt" />
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\\.ppt" />
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\\.xls" />
+				<data android:scheme="https" android:host="*" android:pathPattern=".*\\.xls" />
+				<data android:scheme="content" android:host="*" android:pathPattern=".*\\.xls" />
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\\.xls" />
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\\.doc" />
+				<data android:scheme="https" android:host="*" android:pathPattern=".*\\.doc" />
+				<data android:scheme="content" android:host="*" android:pathPattern=".*\\.doc" />
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\\.doc" />
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\\.docx" />
+				<data android:scheme="https" android:host="*" android:pathPattern=".*\\.docx" />
+				<data android:scheme="content" android:host="*" android:pathPattern=".*\\.docx" />
+				<data android:scheme="file" android:host="*" android:pathPattern=".*\\.docx" />
+				<data android:scheme="http" android:host="*" android:pathPattern=".*\\.jpg" />
+                <data android:scheme="https" android:host="*" android:pathPattern=".*\\.jpg" />
+                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.jpg" />
+                <data android:scheme="file" android:host="*" android:pathPattern=".*\\.jpg" />
+            </intent-filter>
+	       
+        </activity>
+       
+		<activity 
+		    android:name="com.docuvantage.andhelper.main.DocuVantageEdit"
+		    android:configChanges="orientation|keyboardHidden|screenSize"
+		    android:theme="@android:style/Theme.Holo.Light">
+            <intent-filter>
+		        <action android:name="android.intent.action.VIEW" />
+		        <category android:name="android.intent.category.DEFAULT" />
+		        <category android:name="android.intent.category.BROWSABLE" />
+    		</intent-filter>
+    		
+        </activity>
+        
+    </application>
+</manifest>
